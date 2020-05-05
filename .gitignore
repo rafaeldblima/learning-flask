@@ -1,0 +1,7 @@
+flasky/
+
+.idea/
+
+__pycache__/
+
+data.sqlite
