@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 faker = "==0.7.18"
+httpie = "*"
 
 [packages]
 flask = "*"
@@ -19,6 +20,7 @@ email-validator = "*"
 flask-pagedown = "*"
 markdown = "*"
 bleach = "*"
+flask-httpauth = "*"
 
 [requires]
 python_version = "3.8"

@@ -28,3 +28,19 @@ fake.users(100)
 from app import fake
 fake.posts(100)
 ```
+
+#### Httpie
+##### Testar requests com auth (instalar dependências de dev antes)
+```virtualenv
+http --json --auth <email>:<password> GET http://127.0.0.1:5000/api/v1/posts/
+```
+```virtualenv
+http --auth <email>:<password> --json POST http://127.0.0.1:5000/api/v1/posts/ \
+"body=I'm adding a post from the *command line*."
+```
+```virtualenv
+http --auth <email>:<password> --json POST http://127.0.0.1:5000/api/v1/tokens/
+```
+```virtualenv
+http --json --auth eyJpYXQ...: GET http://127.0.0.1:5000/api/v1/posts/ 
+```
