@@ -13,6 +13,8 @@ flask-wtf = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-mail = "*"
+flask-login = "*"
+email-validator = "*"
 
 [requires]
 python_version = "3.8"
