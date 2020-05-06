@@ -14,6 +14,7 @@ class Config:
     FLASK_MAIL_SENDER = 'Flask Admin <flask@example.com>'
     FLASK_ADMIN = os.environ.get('FLASK_ADMIN')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    FLASK_POSTS_PER_PAGE = 20
 
     @staticmethod
     def init_app(app):
@@ -29,7 +30,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
-                              'sqlite://' + os.path.join(basedir, 'data-test.sqlite')
+                              'sqlite:///' + os.path.join(basedir, 'data-test.sqlite')
 
 
 class ProductionConfig(Config):

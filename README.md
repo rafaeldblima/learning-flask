@@ -14,3 +14,17 @@
 - flask db upgrade
 ##### Remover migration (última)
 - flask db downgrade
+
+#### Faker
+##### Adicionar usuários fake (instalar dependências de dev antes)
+- flask shell
+```shell
+from app import fake
+fake.users(100)
+```
+##### Adicionar posts fake (instalar dependências de dev antes)
+- flask shell
+```shell
+from app import fake
+fake.posts(100)
+```
