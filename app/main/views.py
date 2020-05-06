@@ -262,3 +262,14 @@ def response():
     resp.set_cookie("cookie", "monster")
     resp.set_data('<h1>Test response</h1>' + url_for("user", name="Rafael", _external=True))
     return resp
+
+
+@main.route('/shutdown')
+def server_shutdown():
+    if not current_app.testing:
+        abort(404)
+    shutdown = request.environ.get('werkzeug.server.shutdown')
+    if not shutdown:
+        abort(500)
+    shutdown()
+    return 'Shutting down...'

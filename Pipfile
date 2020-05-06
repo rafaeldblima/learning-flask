@@ -6,6 +6,8 @@ verify_ssl = true
 [dev-packages]
 faker = "==0.7.18"
 httpie = "*"
+coverage = "*"
+selenium = "*"
 
 [packages]
 flask = "*"
