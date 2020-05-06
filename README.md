@@ -1,12 +1,9 @@
-## Flask Starter
-Using:
-- flask-bootstrap
-- flask-moment
-- flask-wtf
-- flask-sqlalchemy
-- flask-migrate
-- flask-mail
+## Flask App
 
+`export FLASK_APP=api.py`
+
+#### Running tests
+- flask test
 
 #### Flask-migrate commands
 ##### Iniciar migrate
