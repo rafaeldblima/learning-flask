@@ -5,3 +5,5 @@ flasky/
 __pycache__/
 
 data.sqlite
+
+*.sqlite
