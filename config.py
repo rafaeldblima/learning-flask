@@ -43,6 +43,7 @@ class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
                               'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 
+    @classmethod
     def init_app(cls, app):
         Config.init_app(app)
 
@@ -71,10 +72,10 @@ class HerokuConfig(ProductionConfig):
 
     @classmethod
     def init_app(cls, app):
-        ProductionConfig().init_app(app)
+        ProductionConfig.init_app(app)
 
         # handle reverse proxy server headers
-        from werkzeug.contrib.fixers import ProxyFix
+        from werkzeug.middleware.proxy_fix import ProxyFix
         app.wsgi_app = ProxyFix(app.wsgi_app)
 
         # log to stderr
@@ -83,9 +84,6 @@ class HerokuConfig(ProductionConfig):
         file_handler = StreamHandler()
         file_handler.setLevel(logging.INFO)
         app.logger.addHandler(file_handler)
-
-        from werkzeug.contrib.fixers import ProxyFix
-        app.wsgi_app = ProxyFix(app.wsgi_app)
 
 
 config = {

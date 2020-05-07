@@ -1,0 +1,7 @@
+version: '3'
+services:
+  api:
+    container_name: blog-api
+    build: .
+    ports:
+      - "8000:5000"
