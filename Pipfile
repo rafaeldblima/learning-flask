@@ -23,6 +23,8 @@ flask-pagedown = "*"
 markdown = "*"
 bleach = "*"
 flask-httpauth = "*"
+flask-sslify = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
